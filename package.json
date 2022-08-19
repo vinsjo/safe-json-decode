@@ -1,6 +1,6 @@
 {
     "name": "safe-json-decode",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "a minimal package for encoding and decoding json without unhandled exceptions being thrown on failure",
     "type": "module",
     "source": "./index.ts",
