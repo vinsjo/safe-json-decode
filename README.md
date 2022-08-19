@@ -12,18 +12,20 @@ Package is bundled using [microbundle](https://www.npmjs.com/package/microbundle
 
 ```js
 // ESM:
-import { json_decode, json_encode } from 'safe-json-decode';
+import { decode, encode } from 'safe-json-decode';
 // CommonJS:
-const { json_decode, json_encode } = require('safe-json-decode');
+const { decode, encode } = require('safe-json-decode');
+// or:
+const safeJSON = require('safe-json-decode');
 ```
 
 ## Usage
 
 ```js
-json_decode('{"foo": "bar"}');
+decode('{"foo": "bar"}');
 // => {foo: 'bar'}
-json_encode({ foo: 'bar' });
-// => '{"foo": "bar"}'
-json_decode('{invalidJson}');
+decode('{invalidJson}');
 // => null
+encode({ foo: 'bar' });
+// => '{"foo": "bar"}'
 ```
