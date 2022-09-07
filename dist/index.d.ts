@@ -1,21 +1,21 @@
+export declare type reviver = (this: any, key: string, value: any) => any;
+export declare type replacer = (this: any, key: string, value: any) => any;
+export declare type errorCallback = (err: Error) => void;
 /**
  * Decode JSON string
  *
- * @param {string} json  JSON string to parse
- * @param reviver  Optional function that transforms the results. This function is called for each member of the object. If a member contains nested objects, the nested objects are transformed before the parent object is.
+ * @param  json  JSON string to parse
+ * @param  reviver  Optional function that transforms the results. This function is called for each member of the object. If a member contains nested objects, the nested objects are transformed before the parent object is.
  * @param errorCallback  Optional callback function excecuted on failure
- * @returns {(any | null)}
  * returns parsed JSON on success, null on failure
  */
-declare function decode(json: string, reviver?: (this: any, key: string, value: any) => any | undefined, errorCallback?: (err: Error) => void | any): any | null;
+export declare function decode(json: string, reviver?: reviver, errorCallback?: errorCallback): any | null;
 /**
  * Encode data into JSON string
  *
- * @param {any} data  The json-string to parse
+ * @param data  The json-data to convert to string
  * @param replacer  Optional function that transforms the results.
  * @param errorCallback  Optional callback function excecuted on failure
- * @returns {(string | null)}
  * returns JSON string on success, null on failure
  */
-declare function encode(data: any, replacer?: (this: any, key: string, value: any) => any | undefined, errorCallback?: (err: Error) => void | any): string | null;
-export { decode, encode };
+export declare function encode(data: any, replacer?: replacer, errorCallback?: errorCallback): string | null;

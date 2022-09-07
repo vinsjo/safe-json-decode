@@ -2,25 +2,29 @@
     "name": "safe-json-decode",
     "version": "1.0.1",
     "description": "a minimal package for encoding and decoding json without unhandled exceptions being thrown on failure",
+    "author": "Vincent Sjögren",
+    "license": "MIT",
     "type": "module",
-    "source": "./index.ts",
-    "main": "./dist/index.js",
-    "module": "./dist/index.m.js",
+    "source": "./src/index.ts",
+    "main": "./dist/index.umd.js",
+    "module": "./dist/index.mjs",
     "umd:main": "./dist/index.umd.js",
     "exports": {
-        "require": "./dist/index.cjs",
-        "default": "./dist/index.modern.js"
+        ".": {
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs",
+            "default": "./dist/index.umd.js"
+        }
     },
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "microbundle",
-        "dev": "microbundle watch"
+        "dev": "microbundle watch",
+        "prepublishOnly": "npx browserslist@latest --update-db -y && npm run build"
     },
     "devDependencies": {
-        "microbundle": "^0.15.1"
+        "microbundle": "latest"
     },
-    "author": "Vincent Sjögren",
-    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/vinsjo/safe-json-decode"
