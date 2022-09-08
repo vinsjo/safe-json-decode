@@ -1,6 +1,6 @@
 {
     "name": "safe-json-decode",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "a minimal package for encoding and decoding json without unhandled exceptions being thrown on failure",
     "author": "Vincent Sjögren",
     "license": "MIT",
