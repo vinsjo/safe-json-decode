@@ -12,7 +12,7 @@ export type errorCallback = (err: Error) => void;
  */
 function decode(
 	json: string,
-	reviver?: reviver,
+	reviver?: reviver | null,
 	errorCallback?: errorCallback
 ): any | null {
 	try {
@@ -36,7 +36,7 @@ function decode(
  */
 function encode(
 	data: any,
-	replacer?: replacer,
+	replacer?: replacer | null,
 	errorCallback?: errorCallback,
 	space?: string | number
 ): string | null {
