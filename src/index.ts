@@ -10,7 +10,7 @@ export type errorCallback = (err: Error) => void;
  * @param errorCallback  Optional callback function excecuted on failure
  * returns parsed JSON on success, null on failure
  */
-export function decode(
+function decode(
 	json: string,
 	reviver?: reviver,
 	errorCallback?: errorCallback
@@ -34,18 +34,22 @@ export function decode(
  * @param errorCallback  Optional callback function excecuted on failure
  * returns JSON string on success, null on failure
  */
-export function encode(
+function encode(
 	data: any,
 	replacer?: replacer,
-	errorCallback?: errorCallback
+	errorCallback?: errorCallback,
+	space?: string | number
 ): string | null {
 	try {
 		return JSON.stringify(
 			data,
-			typeof replacer === 'function' ? replacer : undefined
+			typeof replacer === 'function' ? replacer : undefined,
+			space
 		);
 	} catch (err) {
 		if (typeof errorCallback === 'function') errorCallback(err);
 		return null;
 	}
 }
+
+export default { decode, encode };
