@@ -37,8 +37,8 @@ function decode(
 function encode(
 	data: any,
 	replacer?: replacer | null,
-	errorCallback?: errorCallback,
-	space?: string | number
+	space?: string | number,
+	errorCallback?: errorCallback
 ): string | null {
 	try {
 		return JSON.stringify(
