@@ -1,2 +1,0 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n((e||self).safeJsonDecode={})}(this,function(e){e.decode=function(e,n,t){try{return JSON.parse(e,"function"==typeof n?n:void 0)}catch(e){return"function"==typeof t&&t(e),null}},e.encode=function(e,n,t){try{return JSON.stringify(e,"function"==typeof n?n:void 0)}catch(e){return"function"==typeof t&&t(e),null}}});
-//# sourceMappingURL=index.umd.js.map
